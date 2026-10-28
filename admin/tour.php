@@ -1,0 +1,71 @@
+<?php 
+include("inc/conn.php");
+include("inc/header.php");
+?>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h3 class="fw-bold text-dark mb-1">Tour Destinations</h3>
+        <p class="text-muted small mb-0">Manage featured travel locations, destination cards, and booking links</p>
+    </div>
+    <a href="tour_insert.php" class="btn btn-primary rounded-pill px-4 shadow-sm d-flex align-items-center gap-2">
+        <i class="ri-add-line fs-5"></i> Add New Tour
+    </a>
+</div>
+
+<div class="card admin-card p-4">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead>
+                <tr>
+                    <th width="6%">ID</th>
+                    <th width="12%">Date</th>
+                    <th width="14%">Thumbnail</th>
+                    <th width="16%">Region / Subtitle (H6)</th>
+                    <th width="22%">Destination Name (H4)</th>
+                    <th width="16%">Section Title (H2)</th>
+                    <th width="14%">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                    $sql = "SELECT * FROM tour ORDER BY id DESC";
+                    $rs = mysqli_query($conn, $sql);
+                    if (mysqli_num_rows($rs) > 0) {
+                        while ($row = mysqli_fetch_array($rs)) {
+                            $imgSrc = !empty($row["img"]) ? "../" . htmlspecialchars($row["img"]) : "../img/placeholder.jpg";
+                            echo "<tr>
+                                <td><span class='badge bg-light text-dark border'>#" . $row["id"] . "</span></td>
+                                <td class='text-muted small'>" . htmlspecialchars($row["date"]) . "</td>
+                                <td><img src='{$imgSrc}' class='img-thumb-preview' alt='tour'></td>
+                                <td><span class='badge bg-info bg-opacity-10 text-info border border-info border-opacity-25'>" . htmlspecialchars($row["h6"]) . "</span></td>
+                                <td><strong class='text-dark'>" . htmlspecialchars($row["h4"]) . "</strong></td>
+                                <td><span class='text-muted small'>" . htmlspecialchars($row["h2"]) . "</span></td>
+                                <td>
+                                    <div class='d-flex gap-2'>
+                                        <a href='tour_update.php?id=" . $row["id"] . "' class='btn btn-sm btn-outline-primary rounded-pill px-3 d-inline-flex align-items-center gap-1'>
+                                            <i class='ri-edit-line'></i> Edit
+                                        </a>
+                                        <a href='tour_delete.php?id=" . $row["id"] . "' class='btn btn-sm btn-outline-danger rounded-pill px-3 d-inline-flex align-items-center gap-1' onclick='return checkdelete()'>
+                                            <i class='ri-delete-bin-line'></i> Delete
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='7' class='text-center py-4 text-muted'>No tour destinations found. Click 'Add New Tour' to create one.</td></tr>";
+                    }
+                ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+function checkdelete() {
+    return confirm('Are you sure you want to delete this tour destination?');
+}
+</script>
+
+<?php include("inc/footer.php"); ?>

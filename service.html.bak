@@ -1,0 +1,206 @@
+<?php 
+		include("admin/inc/conn.php");
+		include ("inc/header.php");
+ ?>
+
+<style>
+
+	:root{
+	--h1-font-family: Viner Hand ITC;
+	--h2-font-family :Californian FB;
+	--h5-font-family : Copperplate Gothic Light;
+	--p-font-family: Times New Roman;
+	
+}
+	.service{
+	 		position: relative;
+			height: 100vh;
+			width: 100%;
+	 		background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(img/service1.jpg);
+	 		background-size: cover;
+	 		background-position:  center;
+			text-align: center;
+		}
+
+ 	.service-text{ 
+ 		margin-top: 300px;
+ 	 	font-size: 50px; 
+ 	 	font-family: var(--h1-font-family);
+ 	 }
+
+ 	 .service-heading{
+ 	 	color: #ffa343;
+ 	 	text-align: center;
+ 	 	font-size: 45px;
+ 	 }
+
+ 	 .service-info{
+ 	 	text-align: center;
+ 	 	justify-content: space-evenly;
+ 	 	font-size: 20px;
+ 	 }
+
+ 	 .container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+	}
+
+	.service-container{
+		display: flex;
+		justify-items: center;
+	}
+
+	.card{
+		height: 400px;
+		width: 400px;
+		margin: 50px;
+		border-color: #ffa343;
+		border-top-style: solid;
+		border-bottom-style: solid;
+		border-width: 8px;
+		overflow: hidden;
+	}
+
+	img{
+		height: 400px;
+		width: 400px;
+		border-radius: 3px;
+		opacity: 0.5;
+	}
+
+	.service-intro{
+		height: 70px;
+		width: 350px;
+		padding: 6px;
+		box-sizing: border-box;
+		position: relative;
+		bottom: 240px;
+		color: white;
+	}
+
+	.service-title{
+		margin-top: 150px;
+		margin-left: 20px;
+		font-size: 40px;
+		
+	}
+
+	.service-desc{
+		font-size: 20px;
+		margin-left: 20px;
+		
+		opacity: 0;
+	}
+
+	.title{
+		font-size: 30px;
+		color: ;
+	}
+
+
+	.card:hover{
+		cursor: pointer;
+	}
+
+	.card:hover .service-intro{
+		height: 100px;
+		width: 400px;
+		bottom: 450px;
+		
+	}
+
+
+	.card:hover .service-desc{
+		visibility: visible;
+		opacity: 1;
+		
+	}
+	
+
+
+</style>
+
+	<section class="service">
+		<div class="service-text">
+			
+			<h1 class="h1">Sevices</h1>
+			
+		</div>		
+	</section>
+
+	<section>
+		<div>
+			<h1 class="service-heading">LET US HOST YOUR VACATION</h1>
+		</div><br>
+		<div>
+			<p class="service-info">If you’re being honest, when you plan your own vacation, it’s a lot like hosting your own birthday party…and where’s the fun in that? So put away the confetti poppers and helium tank…we have you covered. We start with a thorough inquiry form, and then move onto a brief intake call- just to make sure that we fully “get” you. From there, we’ll put together a bundled concept perfectly tailored to your personal style. Hesitant because you love being the party planner? Don’t worry- we think of this as a team effort. <br><br>
+
+			Our goal is to prove our value through education and client empowerment. You’ll work with your travel advisor to select the service level that best matches your needs. You can choose to have us be as hands-on or as hands-off as you wish!</p>
+		</div>
+	</section>
+
+	<section class="container">
+		<div class="service-container">
+			<div class="card">
+				<img src="img/service3.jpg" alt="services">
+				<div class="service-intro">
+					<h1 class="service-title"><span class="title">SOLO TRIP</span></h1>
+					<p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. </p>
+				</div>
+			</div>
+		
+			<div class="card">
+				<img src="img/service2.jpg" alt="team-member">
+				<div class="service-intro">
+					<h1 class="service-title"><span  class="title">HONEYMOON</span></h1>
+					<p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. </p>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<section class="container">
+		<div class="service-container">
+			<div class="card">
+				<img src="img/service2.jpg" alt="services">
+				<div class="service-intro">
+					<h1 class="service-title"><span  class="title">GROUP TRAVEL</span></h1>
+					<p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. </p>
+				</div>
+			</div>
+		
+			<div class="card">
+				<img src="img/service3.jpg" alt="team-member">
+				<div class="service-intro">
+					<h1 class="service-title"><span  class="title">DESTINATION</span></h1>
+					<p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. </p>
+				</div>
+			</div>
+		</div>
+
+		
+
+	</section>
+
+
+
+
+
+ <?php 
+	include ("inc/footer.php");
+ ?>
